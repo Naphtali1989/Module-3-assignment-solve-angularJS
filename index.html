@@ -24,7 +24,7 @@
             </div>
         </form>
 
-        <found-items items="narrowItDown.foundItems" on-remove="narrowItDown.removeItem(idx)"></found-items>
+        <found-items items="narrowItDown.foundItems" on-remove="narrowItDown.removeItem(idx)" ng-if="narrowItDown.hasSearched"></found-items>
     </div>
 
 </body>

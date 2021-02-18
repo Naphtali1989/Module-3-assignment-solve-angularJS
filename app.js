@@ -15,7 +15,6 @@
                 items: '<',
                 onRemove: '&'
             },
-            // controller: 'FoundItemsDirectiveController as found',
             controller: FoundItemsDirectiveController,
             controllerAs: 'found',
             bindToController: true,
@@ -25,7 +24,6 @@
 
     function FoundItemsDirectiveLink(scope, el) {
         scope.$watch('found.hasItems()', (newVal, oldVal) => {
-            // console.log(newVal)
             if (newVal) displayEmptyResError();
             else removeEmptyResError()
         })
@@ -51,6 +49,8 @@
     function NarrowItDownController(MenuSearchService) {
         const narrowItDown = this;
 
+        narrowItDown.hasSearched = false;
+
         narrowItDown.foundItems = [];
 
         narrowItDown.removeItem = (idx) => {
@@ -58,7 +58,7 @@
         }
 
         narrowItDown.getMatchedMenuItems = (searchTerm) => {
-
+            narrowItDown.hasSearched = true;
             MenuSearchService.getMatchedMenuItems(searchTerm)
                 .then(items => {
                     narrowItDown.foundItems = items
