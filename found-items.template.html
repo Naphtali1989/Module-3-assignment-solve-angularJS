@@ -2,8 +2,10 @@
     <h3>Found Items:</h3>
     <ul>
         <li ng-repeat="item in found.items">
-            {{item}}
-            <button ng-click="found.onRemove({idx: $index});">Remove Item</button>
+            <h4>{{item.name}}</h4>
+            <h5>{{item.short_name}}</h5>
+            <h5>{{item.description}}</h5>
+            <button ng-click="found.onRemove({idx: $index});">Don't want this one!</button>
         </li>
     </ul>
     <div class="error">This search has no resaults... Sorry</div>

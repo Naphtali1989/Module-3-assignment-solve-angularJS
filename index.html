@@ -15,13 +15,14 @@
 <body>
     <div class="container" ng-controller="NarrowItDownController as narrowItDown">
         <h1>Narrow Down Your Chinese Menu Choice</h1>
-
-        <div class="form-group">
-            <input type="text" placeholder="search term" class="form-control" ng-model="searchTerm">
-        </div>
-        <div class="form-group narrow-button">
-            <button class="btn btn-primary" ng-click="narrowItDown.getMatchedMenuItems(searchTerm)">Narrow It Down For Me!</button>
-        </div>
+        <form class="myForm" ng-submit="narrowItDown.getMatchedMenuItems(searchTerm)">
+            <div class="form-group">
+                <input type="text" placeholder="search term" class="form-control" ng-model="searchTerm" required>
+            </div>
+            <div class="form-group narrow-button">
+                <button class="btn btn-primary">Narrow It Down For Me!</button>
+            </div>
+        </form>
 
         <found-items items="narrowItDown.foundItems" on-remove="narrowItDown.removeItem(idx)"></found-items>
     </div>

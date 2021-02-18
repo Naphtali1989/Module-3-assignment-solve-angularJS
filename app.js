@@ -58,7 +58,6 @@
         }
 
         narrowItDown.getMatchedMenuItems = (searchTerm) => {
-            if (!searchTerm || !searchTerm.length) return;
 
             MenuSearchService.getMatchedMenuItems(searchTerm)
                 .then(items => {
