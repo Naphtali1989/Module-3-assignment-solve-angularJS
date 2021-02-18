@@ -1,0 +1,10 @@
+<section>
+    <h3>Found Items:</h3>
+    <ul>
+        <li ng-repeat="item in found.items">
+            {{item}}
+            <button ng-click="found.onRemove({idx: $index});">Remove Item</button>
+        </li>
+    </ul>
+    <div class="error">This search has no resaults... Sorry</div>
+</section>
